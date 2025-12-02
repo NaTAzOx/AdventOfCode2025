@@ -6,3 +6,5 @@
 
 |Challenge|Language|Enjoyment|
 |:-:|:-:|:-:|
+|December1-1|Java|9/10|
+|December1-2|Kotlin|Not completed yet|
