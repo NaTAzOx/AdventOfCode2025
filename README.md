@@ -8,3 +8,5 @@
 |:-:|:-:|:-:|
 |December1-1|Java|9/10|
 |December1-2|Kotlin|Not completed yet|
+|December2-1|PHP|8/10|
+|December2-2|Pascal|3/10|
