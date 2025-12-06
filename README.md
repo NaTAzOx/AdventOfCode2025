@@ -14,3 +14,5 @@
 |December3-2|C#|6/10|
 |December4-1|Elixir|5/10|
 |December4-2|JavaScript|7/10|
+|December5-1|TypeScript|7/10|
+|December5-2|Perl|4/10|
