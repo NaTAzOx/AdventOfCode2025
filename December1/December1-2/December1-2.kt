@@ -9,12 +9,35 @@ fun readFile(filePath: String): String {
     return content
 }
 
+private fun countZeroPassesRight(start: Int, clicks: Int): Int {
+    if (clicks <= 0) {
+        return 0
+    }
+    val first = (100 - start) % 100
+    val firstPositive = if (first == 0) 100 else first
+    if (clicks < firstPositive) {
+        return 0
+    }
+    return 1 + (clicks - firstPositive) / 100
+}
+
+private fun countZeroPassesLeft(start: Int, clicks: Int): Int {
+    if (clicks <= 0) {
+        return 0
+    }
+    val firstPositive = if (start == 0) 100 else start
+    if (clicks < firstPositive) {
+        return 0
+    }
+    return 1 + (clicks - firstPositive) / 100
+}
+
 fun main(args: Array<String>) {
     if (args.isEmpty()) {
         println("Please provide a file path.")
         return
     }
-    val lines = readFile(args[0]).lines()
+    val lines = readFile(args[0]).lineSequence().filter { it.isNotBlank() }
     var dialPoint = 50
     var amountOfZeros = 0
     for (line in lines) {
@@ -22,24 +45,15 @@ fun main(args: Array<String>) {
         val clicks = line.substring(1).toInt()
         when (rotation) {
             'L' -> {
-                dialPoint = dialPoint - clicks
-
-                while (dialPoint < 0) {
+                amountOfZeros += countZeroPassesLeft(dialPoint, clicks)
+                dialPoint = (dialPoint - clicks) % 100
+                if (dialPoint < 0) {
                     dialPoint += 100
-                    amountOfZeros++
                 }
-
-                println(dialPoint)
             }
             'R' -> {
-                dialPoint = dialPoint + clicks
-
-                while (dialPoint > 99) {
-                    dialPoint -= 100
-                    amountOfZeros++
-                }
-
-                println(dialPoint)
+                amountOfZeros += countZeroPassesRight(dialPoint, clicks)
+                dialPoint = (dialPoint + clicks) % 100
             }
         }
     }

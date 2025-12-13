@@ -7,7 +7,7 @@
 |Challenge|Language|Enjoyment|
 |:-:|:-:|:-:|
 |December1-1|Java|9/10|
-|December1-2|Kotlin|Not completed yet|
+|December1-2|Kotlin|7/10|
 |December2-1|PHP|8/10|
 |December2-2|Pascal|3/10|
 |December3-1|Rust|9/10|
