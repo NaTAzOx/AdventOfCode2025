@@ -16,3 +16,5 @@
 |December4-2|JavaScript|7/10|
 |December5-1|TypeScript|7/10|
 |December5-2|Perl|4/10|
+|December6-1|Shell|2/10|
+|December6-2|C++|Not finished yet|
